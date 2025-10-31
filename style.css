@@ -528,6 +528,187 @@ a.header-menu-btn{
     font-family: 'Poltawski Nowy';
     font-size: 30px;
 }
+
+.Crud-Top-bar {
+    display: grid;
+    grid-template-areas: "title add_mission filter_agency filter_year search_bar";
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    
+    /* --- CRITICAL ADDITION FOR THE BACKGROUND --- */
+    background-color: #0b0c1f; /* Deep dark blue/purple to match the inputs */
+    
+    /* Optional: Add a subtle border or box-shadow for depth */
+    border-bottom: 1px solid #1a1a2e; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    
+    /* Optional: Ensure text color is light against the dark background */
+    color: #ffffff; 
+    
+    max-width: 1200px; 
+    margin: 20px auto; 
+    padding: 10px 20px; /* Added horizontal padding to give space around items */
+    border-radius: 8px; /* Add slight rounding */
+}
+/* ... rest of your CSS ... */
+
+.Crud-Top-bar_title{
+    grid-area: title;
+}
+.add_mission{
+    grid-area: add_mission;
+}
+.add_mission button{
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+}
+.add_mission button:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.add_mission button:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.add_mission button:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.filter_agency{
+    grid-area: filter_agency;
+}
+.filter_year{
+    grid-area: filter_year;
+}
+.search_bar{
+    grid-area: search_bar;
+}
+/* Style for both filter containers */
+.filter_agency,
+.filter_year {
+    /* Optional: Ensure consistent height/alignment with the button */
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.filter_agency select,
+.filter_year select {
+    /* Reset default styling for a custom look */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    /* Box Model */
+    height: 40px; 
+    padding: 0 20px 0 10px; /* Adjust padding for text and icon */
+    border-radius: 6px;
+    
+    /* Colors & Typography */
+    background-color: #1a1a2e; /* Dark background for a space theme */
+    color: #ffffff;
+    border: 1px solid #5adaff; /* Light blue border */
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    
+    /* Icon (Dropdown Arrow) */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%235adaff" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.018 2.38 4 3.205 4h9.59c.825 0 1.32 1.018.753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px center; /* Position the custom arrow */
+    background-size: 16px;
+    
+    /* Hover/Focus Effects */
+    transition: all 0.2s ease;
+}
+
+.filter_agency select:hover,
+.filter_year select:hover {
+    background-color: #2b2b4e; /* Slightly lighter on hover */
+    box-shadow: 0 0 5px #5adaff;
+}
+
+.filter_agency select:focus,
+.filter_year select:focus {
+    outline: none;
+    border-color: #5468ff; /* Brighter border on focus */
+    box-shadow: 0 0 8px #5468ff;
+}
+
+.search_bar {
+    /* Optional: Ensure consistent height/alignment with the button */
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.search_bar input[type="search"] {
+    /* Box Model */
+    height: 40px; 
+    padding: 0 15px; 
+    border-radius: 6px;
+    
+    /* Colors & Typography */
+    background-color: #1a1a2e; /* Dark background */
+    color: #ffffff;
+    border: 1px solid #5adaff; /* Light blue border */
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    
+    /* Placeholder Text */
+    &::placeholder {
+        color: #8a8a9e; /* Muted color for placeholder */
+    }
+    
+    /* Optional: Add search icon using background image if needed, or rely on HTML/JS */
+    
+    /* Focus Effect */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search_bar input[type="search"]:focus {
+    outline: none;
+    border-color: #5468ff;
+    box-shadow: 0 0 8px #5468ff;
+}
+
+
+
+
+
+
+
+
+
 .Missions-title{
     display: grid;
     grid-template-columns: max-content max-content;
@@ -546,12 +727,12 @@ a.header-menu-btn{
 }
 .Missions-cards{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5 , 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(min-content, max-content);
     justify-items: center;
     gap: 80px;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom: 150px;
 }
 .Missions-cards-iteam{
