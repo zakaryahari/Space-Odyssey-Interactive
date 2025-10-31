@@ -530,6 +530,7 @@ a.header-menu-btn{
     font-size: 30px;
 }
 
+
 .Crud-Top-bar {
     display: grid;
     grid-template-areas: "title add_mission filter_agency filter_year search_bar";
@@ -607,7 +608,7 @@ a.header-menu-btn{
 .filter_agency{
     grid-area: filter_agency;
 }
-.filter_year{
+.year_search_bar{
     grid-area: filter_year;
 }
 .search_bar{
@@ -665,14 +666,14 @@ a.header-menu-btn{
     box-shadow: 0 0 8px #5468ff;
 }
 
-.search_bar {
+.search_bar ,.year_search_bar {
     /* Optional: Ensure consistent height/alignment with the button */
     height: 48px;
     display: flex;
     align-items: center;
 }
 
-.search_bar input[type="search"] {
+.search_bar input[type="search"] ,.year_search_bar input[type="search"]{
     /* Box Model */
     height: 40px; 
     padding: 0 15px; 
@@ -696,7 +697,7 @@ a.header-menu-btn{
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.search_bar input[type="search"]:focus {
+.search_bar input[type="search"]:focus ,.year_search_bar input[type="search"]:focus{
     outline: none;
     border-color: #5468ff;
     box-shadow: 0 0 8px #5468ff;

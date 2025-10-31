@@ -8,13 +8,13 @@ async function getData(path){
     
     return await result.json();
 }   
-getData(path).then(data => { missionData = data; renderProjects(); });
+getData(path).then(data => { missionData = data; renderProjects(missionData); });
 
 console.log(getData(path));
 
 // Filling the Missions Section
 
-function renderProjects() {
+function renderProjects(array) {
     
     const container = document.getElementsByClassName('Missions-cards')[0];
     
@@ -43,7 +43,16 @@ function renderProjects() {
 
 const show_btn = document.getElementById('add_mission_btn');
 
-show_btn.addEventListener('click', renderProjects);
+
+// Filtering Missions by Year
+
+
+const filter_input = document.getElementById('filter_year_select').value;
+
+console.log(filter_input);
+
+
+// show_btn.addEventListener('click', renderProjects);
 
 
 
