@@ -703,8 +703,51 @@ a.header-menu-btn{
     box-shadow: 0 0 8px #5468ff;
 }
 
+.Missions-card-status{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* padding-right: 15px; */
+    
+}
+.Missions-card-status-left{
+    justify-self: end;
+    padding-right: 10px;
+}
+.mission-hr{
+    border-color: rgba(0, 0, 0, 0.089);
+}
+/* Container for the buttons */
+.card-actions {
+    position: absolute; /* Allows positioning relative to the card */
+    top: 10px;
+    right: 10px;
+}
 
+/* Base style for all icon buttons */
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2.2em;
+    margin-left: 5px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    color: black;
+}
 
+.action-btn:hover {
+    opacity: 1.0;
+}
+
+/* 🎯 CSS for the Favorite State (Controlled by JS) */
+.favorite-toggle {
+    font-weight: bold;
+}
+
+/* This class is ADDED by JavaScript when the user clicks the star */
+.is-favorited {
+    color: gold; /* Yellow star for favorited item */
+}
 
 
 
