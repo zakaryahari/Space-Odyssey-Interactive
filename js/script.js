@@ -63,8 +63,6 @@ function renderProjects(array) {
     filling_filter_year_input();
 }
 
-const show_btn = document.getElementById('add_mission_btn');
-
 
 // Filtering Missions by Year
 
@@ -135,7 +133,6 @@ function applyFiltersAndSearch() {
     if (agencyFilter) { 
         filteredMissions = filteredMissions.filter(mission => mission.agency.includes(agencyFilter));
     }
-    
 
     if (yearSearch) {
         filteredMissions = filteredMissions.filter(mission => {
@@ -163,3 +160,48 @@ yearSearch.addEventListener('change',applyFiltersAndSearch);
 
 const missionSearch = document.getElementById('search_bar_input');
 missionSearch.addEventListener('change',applyFiltersAndSearch);
+
+
+// CRUD_Form
+const crud_form = document.querySelector('.CRUD_Form');
+const add_mission_btn = document.getElementById('add_mission_btn');
+const mission_close_input = document.querySelector('.mission_close_input');
+
+if (crud_form) {
+    // Attach listener to the form container itself
+    crud_form.addEventListener('click', (e) => {
+        // Only close if the click was exactly on the backdrop (the parent div)
+        if (e.target === crud_form) {
+            crud_form.classList.add('hidden');
+            console.log("Form closed by backdrop click.");
+        }
+    });
+}
+if (add_mission_btn) {
+    add_mission_btn.addEventListener('click', () => {
+        if (crud_form) {
+            crud_form.classList.remove('hidden'); 
+        }
+    });
+}
+if (mission_close_input) {
+    mission_close_input.addEventListener('click', () => {
+        if (crud_form) {
+            crud_form.classList.add('hidden'); 
+        }
+    });
+    
+}
+
+// function CRUD_form_fun() {
+//     if (crud_form.classList.contains('hidden')) {
+//     crud_form.classList.remove('hidden');
+//     }
+//     else{
+//     crud_form.classList.add('hidden');
+//     }
+// }
+
+
+ 
+
