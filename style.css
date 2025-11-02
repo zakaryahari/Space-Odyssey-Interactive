@@ -748,8 +748,51 @@ a.header-menu-btn{
 .is-favorited {
     color: gold; /* Yellow star for favorited item */
 }
+.CRUD_Form{
+    position: fixed;
+    background-color: #36363679;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    justify-items: center;
+    align-content: center;
+    display: grid;
+}
+.Form-container{
+    background-color: white;
+    width: 600px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px 5px #ffffff4d;
+}
 
+#add_mission_form{
+    display: grid;
+    grid-auto-flow: row;
+}
 
+#add_mission_form label{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Poppins';
+    font-size: 25px;
+    
+}
+.form_input{
+    padding: 15px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 8px;
+}
+.form_btn{
+    padding: 15px;
+    margin-bottom: 10px;
+}
+.hidden{
+    display: none;
+}
 
 
 
@@ -994,7 +1037,7 @@ img#bot-img{
     font-weight: 200;
 }
 .container-radio-title label{
-        font-size: 25px;
+    font-size: 25px;
     font-weight: 200;
 }
 .container-input .input{
