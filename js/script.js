@@ -166,11 +166,47 @@ missionSearch.addEventListener('change',applyFiltersAndSearch);
 const crud_form = document.querySelector('.CRUD_Form');
 const add_mission_btn = document.getElementById('add_mission_btn');
 const mission_close_input = document.querySelector('.mission_close_input');
+console.log("Close button found:", mission_close_input);
+
+const mission_save_input = document.querySelector('.mission_save_input');
+
+function NextID(missions) {
+    if (missions.length === 0) {
+        return 1; 
+    }
+    const maxId = Math.max(...missions.map(mission => mission.id));
+    return maxId + 1;
+}
+
+function add_new_mission_card() {
+    const mission_name_input = document.getElementById('mission_name_input').value;
+    const mission_agency_input = document.getElementById('mission_agency_input').value;
+    const mission_objective_input = document.getElementById('mission_objective_input').value;
+    const mission_launchDate_input = document.getElementById('mission_launchDate_input').value;
+    const mission_imgae_input = document.getElementById('mission_image_input').value;
+
+    if (!mission_name_input || !mission_agency_input || !mission_objective_input || !mission_launchDate_input) {
+        alert("Please fill in the Name, Agency, and Objective fields.");
+        return;
+    }
+
+    const Mission_newcard = {
+        id :  NextID(missionData),
+        name : mission_name_input,
+        agency : mission_agency_input,
+        objective : mission_objective_input,
+        launchDate : mission_launchDate_input,
+        image : '../images/default.png'
+    };
+
+    missionData.push(Mission_newcard);
+
+}
 
 if (crud_form) {
-    // Attach listener to the form container itself
+
     crud_form.addEventListener('click', (e) => {
-        // Only close if the click was exactly on the backdrop (the parent div)
+        
         if (e.target === crud_form) {
             crud_form.classList.add('hidden');
             console.log("Form closed by backdrop click.");
@@ -186,21 +222,17 @@ if (add_mission_btn) {
 }
 if (mission_close_input) {
     mission_close_input.addEventListener('click', () => {
-        if (crud_form) {
-            crud_form.classList.add('hidden'); 
-        }
+        crud_form.classList.add('hidden'); 
+        renderProjects(missionData);
     });
-    
 }
-
-// function CRUD_form_fun() {
-//     if (crud_form.classList.contains('hidden')) {
-//     crud_form.classList.remove('hidden');
-//     }
-//     else{
-//     crud_form.classList.add('hidden');
-//     }
-// }
+if (mission_save_input) {
+    mission_save_input.addEventListener('click', () => {
+        add_new_mission_card();
+        crud_form.classList.add('hidden'); 
+        renderProjects(missionData);
+    });    
+}
 
 
  
