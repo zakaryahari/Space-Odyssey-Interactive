@@ -1,4 +1,5 @@
 let missionData = [];
+let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 path =  "../js/missions.json"
 
 
@@ -15,7 +16,10 @@ console.log(getData(path));
 // Filling the Missions Section
 
 function renderProjects(array) {
-    
+    const isFavorited = favorites.some(favId => favId === mission.id);
+    const favoriteIcon = isFavorited ? '★' : '☆';
+    const favoriteClass = isFavorited ? 'is-favorited' : '';
+
     const container = document.getElementsByClassName('Missions-cards')[0];
     
     container.innerHTML = ''; 
@@ -37,8 +41,8 @@ function renderProjects(array) {
                             <p class="Missions-card-content-description">${mission.launchDate}</p>
                         </div>
                         <div class="Missions-card-status-left">
-                            <button class="action-btn favorite-toggle" data-mission-id="${mission.id}">
-                                ☆  </button>
+                            <button class="action-btn favorite-toggle ${favoriteClass}" data-mission-id="${mission.id}">
+                                ${favoriteIcon}  </button>
     
                             <button class="action-btn edit-mission-btn" data-mission-id="${mission.id}">
                                 ✎
@@ -72,31 +76,43 @@ function Filter_fun(){
 const year_search_bar = document.getElementById('year_search_bar_input');
 
 year_search_bar.addEventListener('change',Filter_fun);
-// show_btn.addEventListener('click', renderProjects);
 
-// Favorite-toggle
 
-function favorite_toggle_fun() {
-    const favorite_toggle = document.querySelector('.favorite-toggle');
+function favorite_toggle_fun(clickedButton) {
 
-    if (favorite_toggle.classList.contains('is-favorited')) {
+    const missionId = clickedButton.getAttribute('data-mission-id');
+    
 
-        favorite_toggle.textContent = '☆';
-        favorite_toggle.classList.remove('is-favorited');
+    if (clickedButton.classList.contains('is-favorited')) {
 
-    }else{
+        clickedButton.textContent = '☆';
+        clickedButton.classList.remove('is-favorited');
+    } else {
 
-        favorite_toggle.textContent = '★';
-        favorite_toggle.classList.add('is-favorited');
+        clickedButton.textContent = '★';
+        clickedButton.classList.add('is-favorited');
     }
-    favorite_toggle.classList.toggle('is-favorited');
+
 }
 
 
-const favorite_toggle = document.querySelector('.favorite-toggle');
-console.log(favorite_toggle);
+document.addEventListener('DOMContentLoaded', () => {
 
-favorite_toggle.addEventListener('click',favorite_toggle_fun);
+    const missionsContainer = document.querySelector('.Missions-cards'); 
+
+    if (missionsContainer) {
+
+        missionsContainer.addEventListener('click', (e) => {
+
+            const favoriteButton = e.target.closest('.favorite-toggle'); 
+
+            if (favoriteButton) {
+                favorite_toggle_fun(favoriteButton);
+            }
+        });
+    }
+
+});
 
 
 
