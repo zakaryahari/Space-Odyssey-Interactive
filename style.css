@@ -791,7 +791,7 @@ a.header-menu-btn{
     margin-bottom: 10px;
 }
 .hidden{
-    display: none;
+    display: none !important;
 }
 
 
