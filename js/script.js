@@ -124,4 +124,42 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+function applyFiltersAndSearch() {
 
+    const agencyFilter = document.getElementById('filter_agency_select').value;
+    const yearSearch = document.getElementById('year_search_bar_input').value.trim();
+    const missionSearch = document.getElementById('search_bar_input').value.trim().toLowerCase();
+
+    let filteredMissions = missionData; 
+
+    if (agencyFilter) { 
+        filteredMissions = filteredMissions.filter(mission => mission.agency.includes(agencyFilter));
+    }
+    
+
+    if (yearSearch) {
+        filteredMissions = filteredMissions.filter(mission => {
+            const launchYear = mission.launchDate.split('-')[0];
+            return launchYear.includes(yearSearch);
+        });
+    }
+
+    if (missionSearch) {
+        filteredMissions = filteredMissions.filter(mission => 
+            mission.name.toLowerCase().includes(missionSearch) || 
+            mission.objective.toLowerCase().includes(missionSearch)
+        );
+    }
+
+    renderProjects(filteredMissions);
+}
+
+
+const agencyFilter = document.getElementById('filter_agency_select');
+agencyFilter.addEventListener('change',applyFiltersAndSearch);
+
+const yearSearch = document.getElementById('year_search_bar_input');
+yearSearch.addEventListener('change',applyFiltersAndSearch);
+
+const missionSearch = document.getElementById('search_bar_input');
+missionSearch.addEventListener('change',applyFiltersAndSearch);
