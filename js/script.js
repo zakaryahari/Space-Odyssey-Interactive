@@ -16,15 +16,16 @@ console.log(getData(path));
 // Filling the Missions Section
 
 function renderProjects(array) {
-    const isFavorited = favorites.some(favId => favId === mission.id);
-    const favoriteIcon = isFavorited ? '★' : '☆';
-    const favoriteClass = isFavorited ? 'is-favorited' : '';
+
 
     const container = document.getElementsByClassName('Missions-cards')[0];
     
     container.innerHTML = ''; 
 
-    const cardsHTML = missionData.map(mission => {
+    const cardsHTML = array.map(mission => {
+            const isFavorited = favorites.some(favId => favId === mission.id);
+            const favoriteIcon = isFavorited ? '★' : '☆';
+            const favoriteClass = isFavorited ? 'is-favorited' : '';
         return `
             <div class="Missions-cards-iteam Missions-${mission.id}">
                 <div class="Missions-card-img">
@@ -79,21 +80,29 @@ year_search_bar.addEventListener('change',Filter_fun);
 
 
 function favorite_toggle_fun(clickedButton) {
-
-    const missionId = clickedButton.getAttribute('data-mission-id');
+    const missionId = parseInt(clickedButton.getAttribute('data-mission-id'));
     
 
     if (clickedButton.classList.contains('is-favorited')) {
-
+        
+        const index = favorites.findIndex(id => id === missionId);
+        if (index !== -1) {
+            favorites.splice(index, 1);
+        }
+        
         clickedButton.textContent = '☆';
         clickedButton.classList.remove('is-favorited');
     } else {
-
+        
+        favorites.push(missionId);
+        
         clickedButton.textContent = '★';
         clickedButton.classList.add('is-favorited');
     }
-
+    
+    localStorage.setItem('favorites', JSON.stringify(favorites));
 }
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
