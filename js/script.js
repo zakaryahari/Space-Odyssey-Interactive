@@ -116,8 +116,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (favoriteButton) {
                 favorite_toggle_fun(favoriteButton);
             }
+            const editButton = e.target.closest('.edit-mission-btn');
+            if (editButton) {
+                const missionId = parseInt(editButton.getAttribute('data-mission-id'));
+                edit_mission_fun(missionId);
+            }
         });
     }
+        
 
 });
 
@@ -185,21 +191,36 @@ function add_new_mission_card() {
     const mission_launchDate_input = document.getElementById('mission_launchDate_input').value;
     const mission_imgae_input = document.getElementById('mission_image_input').value;
 
+    const edit_id_hidden = parseInt(document.getElementById('edit-id_hidden').value);
+    
     if (!mission_name_input || !mission_agency_input || !mission_objective_input || !mission_launchDate_input) {
         alert("Please fill in the Name, Agency, and Objective fields.");
         return;
     }
+    if (isNaN(edit_id_hidden)) {
 
-    const Mission_newcard = {
-        id :  NextID(missionData),
-        name : mission_name_input,
-        agency : mission_agency_input,
-        objective : mission_objective_input,
-        launchDate : mission_launchDate_input,
-        image : '../images/default.png'
-    };
+        console.log(NextID(missionData));
+        const Mission_newcard = {
+            id :  NextID(missionData),
+            name : mission_name_input,
+            agency : mission_agency_input,
+            objective : mission_objective_input,
+            launchDate : mission_launchDate_input,
+            image : '../images/default.png'
+        };
+        missionData.push(Mission_newcard);
 
-    missionData.push(Mission_newcard);
+    }
+    else{
+        const findId = missionData.findIndex(mission => mission.id === edit_id_hidden);
+
+        missionData[findId].name = mission_name_input;
+        missionData[findId].agency = mission_agency_input;
+        missionData[findId].objective = mission_objective_input;
+        missionData[findId].launchDate = mission_launchDate_input;
+        // missionData[findId].image = '../images/default.png';
+
+    }
 
 }
 
@@ -234,6 +255,24 @@ if (mission_save_input) {
     });    
 }
 
+const edit_mission_btn = document.querySelector('.edit-mission-btn');
 
- 
+function edit_mission_fun(id) {
+    const selected_mission = missionData.find(mission => mission.id === id);
+    if (!selected_mission){
+        alert('there is error 404 this mission is not in the data');
+        return;
+    }
+    if (crud_form) {
+        crud_form.classList.remove('hidden'); 
+    }
+    const edit_id_hidden = document.getElementById('edit-id_hidden');
+    edit_id_hidden.value = selected_mission.id ;
+
+    document.getElementById('mission_name_input').value = selected_mission.name;
+    document.getElementById('mission_agency_input').value = selected_mission.agency;
+    document.getElementById('mission_objective_input').value = selected_mission.objective;
+    document.getElementById('mission_launchDate_input').value = selected_mission.launchDate;
+    document.getElementById('mission_image_input').value = selected_mission.image;
+}
 
