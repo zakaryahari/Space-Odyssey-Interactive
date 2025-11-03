@@ -121,10 +121,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const missionId = parseInt(editButton.getAttribute('data-mission-id'));
                 edit_mission_fun(missionId);
             }
+            const deletebutton = e.target.closest('.delete-mission-btn')
+            if (deletebutton) {
+                const missionId = parseInt(deletebutton.getAttribute('data-mission-id'));
+                delete_mission_fun(missionId);
+            }
         });
     }
         
-
+    console.log(favorites);
 });
 
 
@@ -274,5 +279,14 @@ function edit_mission_fun(id) {
     document.getElementById('mission_objective_input').value = selected_mission.objective;
     document.getElementById('mission_launchDate_input').value = selected_mission.launchDate;
     document.getElementById('mission_image_input').value = selected_mission.image;
+}
+
+function delete_mission_fun(id) {
+    const confirmation = window.confirm('Are you sure you what to delete this mission');
+
+    if (confirmation) {
+        missionData = missionData.filter(mission => mission.id !== id);
+        renderProjects(missionData);
+    }
 }
 
