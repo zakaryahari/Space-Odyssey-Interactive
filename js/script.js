@@ -167,10 +167,10 @@ const agencyFilter = document.getElementById('filter_agency_select');
 agencyFilter.addEventListener('change',applyFiltersAndSearch);
 
 const yearSearch = document.getElementById('year_search_bar_input');
-yearSearch.addEventListener('change',applyFiltersAndSearch);
+yearSearch.addEventListener('input',applyFiltersAndSearch);
 
 const missionSearch = document.getElementById('search_bar_input');
-missionSearch.addEventListener('change',applyFiltersAndSearch);
+missionSearch.addEventListener('input',applyFiltersAndSearch);
 
 
 // CRUD_Form

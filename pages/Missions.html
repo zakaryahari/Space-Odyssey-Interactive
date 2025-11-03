@@ -29,11 +29,11 @@
                         </select>
                     </div>
                     <div class="header-icons">
-                        <div class="test">
+                        <!-- <div class="test">
                             <img src="../images/Header Notification button.png" alt="img1">
-                        </div>
+                        </div> -->
                         <div class="test">
-                            <img src="../images/Profile Icon.png" alt="img1">
+                            <button class="action_header-btn favorite_header-toggle" data-mission-id="${mission.id}">☆</button>
                         </div>
                     </div>
                 </div>
@@ -271,6 +271,7 @@
                         <input type="text" id="mission_launchDate_input" class="form_input">
                         <label for="mission_image_input">Image :</label>
                         <input type="file" id="mission_image_input" class="form_input">
+                        <input type="hidden" id="edit-id_hidden" value="">
                         <hr>
                         <button type="button" class="form_btn mission_save_input" >Save</button>
                         <button type="button" class="form_btn mission_close_input" >Save & Close</button>
