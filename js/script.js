@@ -290,3 +290,64 @@ function delete_mission_fun(id) {
     }
 }
 
+// Fav button header
+
+function renderFavorite(array) {
+
+    const Side_bar_fav = document.querySelector('.Side_bar_fav');
+
+    if (Side_bar_fav) {
+        Side_bar_fav.classList.toggle('hidden');
+    }
+    const Side_bar_container_bottom = document.querySelector('.container_fav_mission_js');
+
+    if (!Side_bar_container_bottom) return;
+
+    Side_bar_container_bottom.innerHTML = ''; 
+
+
+    const Fav_cards = array.map(fav => {
+        const missionId = missionData.find(mission => mission.id === fav);
+        // if (!missionId) {
+        //     return ''; 
+        // }
+        return `
+                    <hr class="mission-hr">
+                    <div class="Side_bar_container_bottom">
+                        <div class="Side_bar_container_bottom_img">
+                            <img src="../${missionId.image}" alt="${missionId.name}">
+                        </div>
+                        <div class="Side_bar_container_bottom_content">
+                            <h1 class="Side_bar_container_bottom_content_title">${missionId.name}</h1>
+                            <p class="Side_bar_container_bottom_content_agency">${missionId.agency}</p>
+                            <p class="Side_bar_container_bottom_content_year">${missionId.launchDate}</p>
+                        </div>
+                    </div>
+                    <hr>
+                `
+    }).join('');
+
+    Side_bar_container_bottom.innerHTML = Fav_cards;
+}
+
+
+const favorite_header_toggle = document.querySelector('.favorite_header-toggle');
+
+favorite_header_toggle.addEventListener('click' , () => renderFavorite(favorites));
+
+const Side_bar_fav = document.querySelector('.Side_bar_fav');
+
+console.log(Side_bar_fav);
+
+if (Side_bar_fav) {
+
+    Side_bar_fav.addEventListener('click', (e) => {
+        
+        if (e.target === Side_bar_fav) {
+            Side_bar_fav.classList.add('hidden');
+            console.log("Form closed by backdrop click.");
+        }
+    });
+
+}
+
