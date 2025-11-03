@@ -759,7 +759,7 @@ a.header-menu-btn{
 .is-favorited {
     color: gold; /* Yellow star for favorited item */
 }
-.CRUD_Form{
+.CRUD_Form ,.Side_bar_fav{
     position: fixed;
     background-color: #36363679;
     height: 100%;
@@ -767,9 +767,15 @@ a.header-menu-btn{
     top: 0;
     left: 0;
     z-index: 100;
-    justify-items: center;
-    align-content: center;
     display: grid;
+    
+}
+.CRUD_Form{
+    justify-items: center;
+    align-items: center;
+}
+.Side_bar_fav{
+    justify-items: end;
 }
 .Form-container{
     background-color: white;
@@ -804,7 +810,48 @@ a.header-menu-btn{
 .hidden{
     display: none !important;
 }
+.Side_bar_container{
+    background-color: white;
+    width: 600px;
+    right: 0;
+    padding: 25px;
+    height: 100vh;
 
+    padding-bottom: 90px;
+}
+.Side_bar_container img {
+    width: 350px;
+    justify-self: center;
+    display: grid;
+    grid-auto-flow: row;
+}
+.Side_bar_container_top{
+    margin-bottom: 50px;
+}
+.Side_bar_container_bottom{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 20px;
+}
+.Side_bar_container_bottom img{
+    width: 250px;
+    height: 180px;
+    border-radius: 8px;
+}
+.Side_bar_container_bottom_content_title{
+    font-family: 'Orbitron';
+}
+.container_fav_mission_js{
+    /* display: grid;
+    grid-auto-flow: row; */
+    justify-items: start;
+    overflow-y: auto;
+    scroll-snap-type: none;
+    scroll-behavior: smooth;
+    max-height: 80vh;
+    
+}
 
 
 

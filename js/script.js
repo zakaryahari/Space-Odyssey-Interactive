@@ -1,3 +1,5 @@
+// Mission.html
+
 let missionData = [];
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 path =  "../js/missions.json"
