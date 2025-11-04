@@ -283,11 +283,14 @@ function edit_mission_fun(id) {
     document.getElementById('mission_image_input').value = selected_mission.image;
 }
 
-function delete_mission_fun(id) {
+function delete_mission_fun(idp) {
     const confirmation = window.confirm('Are you sure you what to delete this mission');
-
+    const id = parseInt(idp);
     if (confirmation) {
         missionData = missionData.filter(mission => mission.id !== id);
+        favorites = favorites.filter(favId => favId !== id);
+
+        localStorage.setItem('favorites', JSON.stringify(favorites));
         renderProjects(missionData);
     }
 }
@@ -310,9 +313,9 @@ function renderFavorite(array) {
 
     const Fav_cards = array.map(fav => {
         const missionId = missionData.find(mission => mission.id === fav);
-        // if (!missionId) {
-        //     return ''; 
-        // }
+        if (!missionId) {
+            return ''; 
+        }
         return `
                     <hr class="mission-hr">
                     <div class="Side_bar_container_bottom">
@@ -352,4 +355,7 @@ if (Side_bar_fav) {
     });
 
 }
+
+// Contact.html
+
 
