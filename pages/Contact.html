@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,11 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <header class="header">
@@ -32,7 +36,8 @@
                             <img src="../images/Header Notification button.png" alt="img1">
                         </div> -->
                         <div class="test">
-                            <button class="action_header-btn favorite_header-toggle" data-mission-id="${mission.id}">☆</button>
+                            <button class="action_header-btn favorite_header-toggle"
+                                data-mission-id="${mission.id}">☆</button>
                         </div>
                     </div>
                 </div>
@@ -58,87 +63,95 @@
             <div class="contact-description">
                 <div class="contact-description-img-parent">
                     <img src="../images/contact-img.png" alt="contact-img">
-                        <div class="contact-description-img-child">
-                            <div class="contact-description-img CDI-title">
-                                <p id="CDI-title-h1">Contact US</p>
-                                <p>Say something to start a live chat!</p>
+                    <div class="contact-description-img-child">
+                        <div class="contact-description-img CDI-title">
+                            <p id="CDI-title-h1">Contact US</p>
+                            <p>Say something to start a live chat!</p>
+                        </div>
+                        <div class="contact-description-img CDI-middle">
+                            <div class="CDI-middle-number">
+                                <img src="../images/bxs_phone-call.png" alt="phone">
+                                <p> +1012 3456 789</p>
                             </div>
-                            <div class="contact-description-img CDI-middle">
-                                <div class="CDI-middle-number">
-                                    <img src="../images/bxs_phone-call.png" alt="phone">
-                                    <p> +1012 3456 789</p>
-                                </div>
-                                <div class="CDI-middle-email">
-                                    <img src="../images/ic_sharp-email.png" alt="email">
-                                    <p> demo@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="contact-description-img CDI-social">
-                                <img src="../images/Social Network.png" alt="s1">
-                                <img src="../images/Social Network-1.png" alt="s2">
-                                <img src="../images/Social Network-2.png" alt="s3">
+                            <div class="CDI-middle-email">
+                                <img src="../images/ic_sharp-email.png" alt="email">
+                                <p> demo@gmail.com</p>
                             </div>
                         </div>
+                        <div class="contact-description-img CDI-social">
+                            <img src="../images/Social Network.png" alt="s1">
+                            <img src="../images/Social Network-1.png" alt="s2">
+                            <img src="../images/Social Network-2.png" alt="s3">
+                        </div>
+                    </div>
                 </div>
                 <div class="contact-description-content">
-                        <div class="content-form">
-                            <form action="POST">
-                                <div class="form-container">
-                                    <div class="form-container-left">
-                                        <div class="container-input">
-                                            <label for="first-name">First Name :</label>
-                                            <input type="text" id="first-name" class="input" >
-                                        </div>
-                                        <br><br>
-                                        <div class="container-input">
-                                            <label for="email-input">Email :</label>
-                                            <input type="email" id="email-input" class="input">
-                                        </div>
+                    <div class="content-form">
+                        <form action="POST">
+                            <div class="form-container">
+                                <div class="form-container-left">
+                                    <div class="container-input">
+                                        <label for="first-name">First Name :</label>
+                                        <input type="text" id="first-name" class="input">
+                                        <span class="error" id="first-name-errormsg"></span>
                                     </div>
-                                    <div class="form-container-right">
-                                        <div class="container-input">
-                                            <label for="last-name">Last Name :</label>
-                                            <input type="text" id="last-name" class="input">
-                                        </div>
-                                        <br><br>
-                                        <div class="container-input">
-                                            <label for="phone-input">Phone Number :</label>
-                                            <input type="tel" id="phone-input" class="input">
-                                        </div>
-                                    </div>
-                                    <div class="form-container-bottom">
-                                        
-                                        <div class="container-radio">
-                                            <div class="container-radio-title">
-                                                <label for="first-name" >Select Subject?</label>
-                                            </div>
-                                            <div class="radio-btn">
-                                                <div>
-                                                    <input type="radio" name="Select-Subject" class="radio"><label for="Select-Subject">General Inquiry</label>
-                                                </div>
-                                                <div>
-                                                    <input type="radio" name="Select-Subject" class="radio"><label for="Select-Subject">General Inquiry</label>
-                                                </div>
-                                                <div>
-                                                    <input type="radio" name="Select-Subject" class="radio"><label for="Select-Subject">General Inquiry</label>
-                                                </div>
-                                                <div>
-                                                    <input type="radio" name="Select-Subject" class="radio"><label for="Select-Subject">General Inquiry</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="container-input">
-                                            <label for="message-input">Message :</label>
-                                            <p>Write your message..</p>
-                                            <input type="text" id="message-input" class="input" >
-                                        </div>
-                                    </div>
-                                    <div class="container-botton">
-                                        <input type="button" class="contact_btn_submit" value="send a message">
+                                    <br><br>
+                                    <div class="container-input">
+                                        <label for="email-input">Email :</label>
+                                        <input type="email" id="email-input" class="input">
+                                        <span class="error" id="email-errormsg"></span>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
+                                <div class="form-container-right">
+                                    <div class="container-input">
+                                        <label for="last-name">Last Name :</label>
+                                        <input type="text" id="last-name" class="input">
+                                        <span class="error" id="last-name-errormsg"></span>
+                                    </div>
+                                    <br><br>
+                                    <div class="container-input">
+                                        <label for="phone-input">Phone Number :</label>
+                                        <input type="tel" id="phone-input" class="input">
+                                        <span class="error" id="phone-errormsg"></span>
+                                    </div>
+                                </div>
+                                <div class="form-container-bottom">
+
+                                    <div class="container-radio">
+                                        <div class="container-radio-title">
+                                            <label for="first-name">Select Subject?</label>
+                                        </div>
+                                        <div class="radio-btn">
+                                            <div>
+                                                <input type="radio" name="Select-Subject" class="radio"><label
+                                                    for="Select-Subject">General Inquiry</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="Select-Subject" class="radio"><label
+                                                    for="Select-Subject">General Inquiry</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="Select-Subject" class="radio"><label
+                                                    for="Select-Subject">General Inquiry</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" name="Select-Subject" class="radio"><label
+                                                    for="Select-Subject">General Inquiry</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container-input">
+                                        <label for="message-input">Message :</label>
+                                        <p>Write your message..</p>
+                                        <input type="text" id="message-input" class="input">
+                                    </div>
+                                </div>
+                                <div class="container-botton">
+                                    <input type="button" class="contact_btn_submit" value="send a message">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="contact-cards">
@@ -149,7 +162,10 @@
                     <div class="contact-text">
                         <p>Email</p>
                     </div>
-                    <div class="contact-des"><p>For any inquiries or assistance, feel free to contact us via email. We are here to help with your questions.</p></div>
+                    <div class="contact-des">
+                        <p>For any inquiries or assistance, feel free to contact us via email. We are here to help with
+                            your questions.</p>
+                    </div>
                 </div>
                 <div class="contact-cards-list">
                     <div class="contact-img">
@@ -159,7 +175,8 @@
                         <p>Live Chat</p>
                     </div>
                     <div class="contact-des">
-                        <P>Connect with us through live chat for instant support and answers to your questions. We're here to help you!</P>
+                        <P>Connect with us through live chat for instant support and answers to your questions. We're
+                            here to help you!</P>
                         <a href="#">Click Here ></a>
                     </div>
                 </div>
@@ -171,15 +188,16 @@
                         <p>Phone</p>
                     </div>
                     <div class="contact-des">
-                        <P>Take the next step in your career with opportunities for development, mentorship, and professional networking.</P>
-                        <a href="#">+94112224556</a>                    
+                        <P>Take the next step in your career with opportunities for development, mentorship, and
+                            professional networking.</P>
+                        <a href="#">+94112224556</a>
                     </div>
                 </div>
                 <!-- <input type="button" class="contact_btn_test" value="tesssssssssssst"> -->
 
             </div>
         </section>
-    
+
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-top">
@@ -207,7 +225,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="footer-bottom">  
+                <div class="footer-bottom">
                     <div class="footer-logo">
                         <img src="../images/logo-title.png" alt="footer-logo">
                     </div>
@@ -226,55 +244,11 @@
         </footer>
 
     </div>
-    <script >
-        
-        // Contact.html
+    <!-- <script src="../js/script.js"></script> -->
+    <script src="../js/contatc.js">
+        console.log("testtestestest");
 
-
-        // const contact_btn_submit = document.querySelector('.contact_btn_submit');
-
-
-        function Contact_check_fun() {
-            const first_name = document.getElementById('first-name').value;
-            const email_input = document.getElementById('email-input').value;
-            const last_name = document.getElementById('last-name').value;
-            const phone_input = document.getElementById('phone-input').value;
-            const radio_btn = document.getElementsByName('Select-Subject');
-
-            const boolradio = Array.from(radio_btn).some(condition => condition.checked);
-            if (!boolradio) {
-                alert('Please select an option .');
-                return;
-            }
-            
-            let namePattern = /^[A-Za-z\s]{2,}$/;
-            let emailPattern = /^[\w.-]+@[\w.-]+\.\w{2,}$/;
-            let phonePattern = /^\d{9,10}$/;
-            
-            if (!namePattern.test(first_name)) {
-                alert('Please enter a valid first-name.');
-                return;
-            }
-            if (!namePattern.test(last_name)) {
-                alert('Please enter a valid last-name.');
-                return;
-            }
-            if (!emailPattern.test(email_input)) {
-                alert('Please enter a valid Email.');
-                return;
-            }
-            if (!phonePattern.test(phone_input)) {
-                alert('Please enter a valid phone number 10 digits .');
-                return;
-            }
-
-            alert('your form submited.');
-            document.querySelector('.content-form form').reset();
-        }
-        const contact_btn_submit = document.querySelector('.contact_btn_submit');
-
-        contact_btn_submit.addEventListener('click',Contact_check_fun);
     </script>
 </body>
-</html>
 
+</html>

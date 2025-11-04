@@ -1,4 +1,5 @@
-html,body{
+html,
+body {
     font-family: "Plus Jakarta Sans", sans-serif;
     margin: 0;
     padding: 0;
@@ -8,24 +9,25 @@ html,body{
 /* this part is for the container */
 
 
-.container{
+.container {
     display: grid;
     grid-template-areas: "header header"
-                            "content content"
-                            "footer footer";
+        "content content"
+        "footer footer";
     grid-template-rows: 1fr;
 }
 
 /* this part is for the header */
 
-.header{
+.header {
     grid-area: header;
     background-color: rgb(255, 255, 255);
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 80px 80px;
 }
-.header-top{
+
+.header-top {
     background-color: black;
     background-image: url(images/dark-sky-header-top.jpg);
     background-size: cover;
@@ -35,11 +37,13 @@ html,body{
     grid-template-columns: 2fr 1fr;
     align-items: center;
 }
-.header-top img{
+
+.header-top img {
     height: 80px;
     padding-left: 90px;
 }
-.search-input{
+
+.search-input {
     width: 300px;
     height: 35px;
     border-radius: 5px;
@@ -47,48 +51,55 @@ html,body{
     border: none;
     margin-right: 25px;
 }
-.header-top-right{
+
+.header-top-right {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     padding-right: 100px;
 }
-.header-icons{
+
+.header-icons {
     display: grid;
-    grid-template-columns: repeat(2 , 50px);
+    grid-template-columns: repeat(2, 50px);
     grid-template-rows: 40px;
     align-items: center;
 }
-.header-icons img{
+
+.header-icons img {
     width: 35px;
     height: 35px;
 }
-.language-selection select{
+
+.language-selection select {
     width: 150px;
     height: 35px;
     background-color: rgba(240, 248, 255, 0);
     color: rgb(255, 255, 255);
     border: none;
 }
-.language-selection option{
+
+.language-selection option {
     color: rgb(0, 0, 0);
 }
 
 
-.header-bottom{
-    background-color: rgb(255, 254, 254); 
+.header-bottom {
+    background-color: rgb(255, 254, 254);
     display: grid;
     grid-template-columns: 1fr 4fr;
     justify-items: center;
     height: 80px;
     box-shadow: 2px 2px 13px 5px #36363686;
 }
-.social-network{
+
+.social-network {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
 }
-.header-menu{
+
+.header-menu {
     list-style: none;
     display: grid;
     grid-auto-flow: column;
@@ -96,13 +107,15 @@ html,body{
     align-items: center;
     gap: 70px;
 }
-.header-menu a{
+
+.header-menu a {
     text-decoration: none;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: rgba(0, 0, 0, 0.678);
     font-size: larger;
 }
-.header-menu-btn{
+
+.header-menu-btn {
     background-color: black;
     padding: 15px 20px 15px 20px;
     color: aliceblue;
@@ -111,20 +124,22 @@ html,body{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-size: larger;
 }
-a.header-menu-btn{
+
+a.header-menu-btn {
     color: #ffffff;
 }
 
 /* this part is for the content container  */
 
-          /* ----- Home page ----- */
-.content{
+/* ----- Home page ----- */
+.content {
     grid-area: content;
     margin: 0;
     padding: 0;
     justify-items: center;
 }
-.slider{
+
+.slider {
     background-image: url(images/slider.png);
     background-size: cover;
     background-position: center;
@@ -135,39 +150,44 @@ a.header-menu-btn{
     align-content: center;
     text-align: center;
 }
-.slider h1{
+
+.slider h1 {
     width: 400px;
     color: aliceblue;
     font-size: 50px;
     text-shadow: 2px 7px 5px black;
 }
-.slider p{
+
+.slider p {
     width: 800px;
     color: aliceblue;
     font-size: 30px;
     font-family: 'Poltawski Nowy';
     font-size: 30px;
 }
-.slider-btn{
+
+.slider-btn {
     border: none;
     padding: 15px 20px 15px 20px;
     border-radius: 25px;
     font-family: "Plus Jakarta Sans", sans-serif;
     background-color: #C0C0C0;
 }
-.Discover-cards{
+
+.Discover-cards {
     display: grid;
-    grid-template-columns: repeat(3 ,1fr);
-    justify-content: space-around;  
-    justify-items: center; 
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-around;
+    justify-items: center;
     padding: 50px;
     gap: 120px;
 }
-.cards{
+
+.cards {
     background-image: url(images/discover-cards-bg.png);
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 282px;
     width: 326px;
     background-color: black;
@@ -180,26 +200,31 @@ a.header-menu-btn{
     grid-template-rows: auto 1fr auto;
     /* border: none; */
 }
-.cards h1{
+
+.cards h1 {
     font-size: 20px;
 }
+
 .cards p {
     font-size: 18px;
     line-height: 1.3rem;
 }
-.cards button{
+
+.cards button {
     justify-self: end;
     background-color: #C0C0C0;
     border: none;
     padding: 15px 20px 15px 20px;
     font-family: "Plus Jakarta Sans", sans-serif;
-    border-radius: 15px;  
+    border-radius: 15px;
 }
-.cards button:hover{
+
+.cards button:hover {
     background-color: aliceblue;
     box-shadow: 2px 2px 2px #e6e6e6;
 }
-.Discover-content{
+
+.Discover-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 50px;
@@ -207,7 +232,8 @@ a.header-menu-btn{
     margin-right: 17%;
     padding-bottom: 50px;
 }
-.Discover-content-time-card{
+
+.Discover-content-time-card {
     display: grid;
     grid-template-rows: 1fr auto;
     background-color: black;
@@ -218,19 +244,23 @@ a.header-menu-btn{
     border-radius: 25px;
     font-size: 25px;
 }
-.Discover-content-description p{
+
+.Discover-content-description p {
     font-size: 20px;
     line-height: 1.9rem;
 }
-.Discover-content-time-card{
+
+.Discover-content-time-card {
     letter-spacing: 5px;
 }
-.time-card-title img{
+
+.time-card-title img {
     width: 250px;
 }
-.Astronomy{
+
+.Astronomy {
     display: grid;
-    grid-template-columns: repeat(2 , 1fr);
+    grid-template-columns: repeat(2, 1fr);
     background-color: black;
     margin-left: 14%;
     margin-right: 14%;
@@ -238,7 +268,8 @@ a.header-menu-btn{
     border-radius: 25px;
     margin-bottom: 80px;
 }
-.Astronomy-img{
+
+.Astronomy-img {
     background-image: url(images/Astronomy-img.png);
     background-position: center;
     background-size: cover;
@@ -246,67 +277,78 @@ a.header-menu-btn{
     width: 700px;
     border-radius: 25px 0 0px 25px;
 }
-.Astronomy-content{
+
+.Astronomy-content {
     margin: 35px;
     padding: 25px;
     background-color: #999999;
     border-radius: 15px;
     justify-content: center;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.534)99,#999999);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.534)99, #999999);
     color: #ffffff;
     align-content: center;
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
-.Astronomy-content h1{
+
+.Astronomy-content h1 {
     font-size: 30px;
     font-family: 'inter';
 }
-.Astronomy-content p{
+
+.Astronomy-content p {
     font-size: 21px;
     line-height: 1.3rem;
     font-family: 'castoro';
 }
-.Astronomy-content button{
+
+.Astronomy-content button {
     justify-self: end;
     background-color: #e4e4e4;
     border: none;
     padding: 15px 20px 15px 20px;
     font-family: "Plus Jakarta Sans", sans-serif;
-    border-radius: 15px;  
+    border-radius: 15px;
 }
-.Astronomy-content button:hover{
+
+.Astronomy-content button:hover {
     background-color: aliceblue;
     box-shadow: 2px 2px 2px #e6e6e6;
 }
 
-.journale{
+.journale {
     display: grid;
-    grid-template-columns: repeat(2 , 1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin-left: 14%;
     margin-right: 14%;
     margin-bottom: 150px;
 }
-.journale-img{
+
+.journale-img {
     justify-items: start;
     padding-left: 50px;
 }
-.journale-content{
+
+.journale-content {
     padding: 25px;
     display: grid;
     grid-template-rows: auto auto auto auto;
     font-family: 'Poltawski Nowy';
 }
-.journale-content p{
+
+.journale-content p {
     padding: 10px 25px 10px 25px;
-    
+
     font-size: 18px;
 }
-.journale-content h1 ,.journale-content h2{
+
+.journale-content h1,
+.journale-content h2 {
     font-size: 36px;
     line-height: 0.5rem;
 }
-.journale-content button{
+
+.journale-content button {
     margin-left: 20px;
     justify-self: start;
     padding: 10px 25px 10px 25px;
@@ -316,7 +358,8 @@ a.header-menu-btn{
     border: 2px solid #000000;
     border-radius: 15px;
 }
-.img-dots{
+
+.img-dots {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-self: center;
@@ -324,9 +367,9 @@ a.header-menu-btn{
     gap: 10px;
 }
 
-          /* ----- About Us page ----- */
+/* ----- About Us page ----- */
 
-.about-description{
+.about-description {
     margin-top: 150px;
     margin-bottom: 50px;
     display: grid;
@@ -337,16 +380,19 @@ a.header-menu-btn{
     box-shadow: 2px 2px 13px 5px #36363686;
     border-radius: 10px;
 }
-.about-description img{
+
+.about-description img {
     border-radius: 20px;
     margin: 10px;
 }
-.about-description-content{
+
+.about-description-content {
     padding: 10px;
     display: grid;
     grid-template-rows: 200px 1fr;
     align-items: start;
 }
+
 .description-content-title {
     align-self: start;
     font-family: 'Orbitron';
@@ -366,24 +412,30 @@ a.header-menu-btn{
     margin-top: 5px;
     margin-bottom: 0;
 }
-.description-content-container-grid-1{
+
+.description-content-container-grid-1 {
     display: grid;
     grid-template-columns: 80px 1fr;
     align-items: center;
 }
+
 .content-container-grid p {
     justify-content: start;
 }
-.content-container-grid p ,.Our-Community-grid p{
+
+.content-container-grid p,
+.Our-Community-grid p {
     font-size: 36px;
     font-family: 'Plus Jakarta Sans';
     font-weight: 800;
 }
-.description-content-container-grid-2{
+
+.description-content-container-grid-2 {
     padding: 0px 45px 0px 25px;
     align-items: start;
 }
-.description-content-container-grid-2 p{
+
+.description-content-container-grid-2 p {
     margin: 0;
     font-family: 'Port Lligat Slab';
     font-size: 34px;
@@ -391,6 +443,7 @@ a.header-menu-btn{
     font-weight: 500;
     line-height: 1.2;
 }
+
 /* .team-and-project{
     justify-items: center;
     margin-left: 10%;
@@ -402,7 +455,7 @@ a.header-menu-btn{
     grid-template-columns: 80px 1fr;
     align-items: center;
     justify-content: center;
-    width: fit-content; 
+    width: fit-content;
     margin: 0 auto;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -415,42 +468,53 @@ a.header-menu-btn{
     margin: 0;
 }
 
-.team-cards ,.project-cards{
+.team-cards,
+.project-cards {
     display: grid;
-    grid-template-columns: repeat(4 ,1fr);
+    grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
     align-items: center;
     gap: 55px;
     margin-left: 13%;
     margin-right: 13%;
 }
-.project-cards-list ,.team-cards-list{
+
+.project-cards-list,
+.team-cards-list {
     justify-items: center;
 }
-.project-img{
+
+.project-img {
     justify-content: center;
     justify-self: center;
 }
-.team-cards-list img{
+
+.team-cards-list img {
     border-radius: 25px;
 }
-.team-cards-list p ,.project-cards-list p{
+
+.team-cards-list p,
+.project-cards-list p {
     text-align: center;
     font-family: 'Port Lligat Slab';
     font-size: 32px;
     font-weight: 300;
 }
-.project-description{
+
+.project-description {
     width: 65%;
 }
-.project-description p{
+
+.project-description p {
     font-family: 'Port Lligat Slab';
     font-size: 16px;
 }
-.project-cards{
+
+.project-cards {
     margin-bottom: 80px;
 }
-.Astronomy-Communities{
+
+.Astronomy-Communities {
     background-image: url(images/Astronomy-Communities.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -460,7 +524,8 @@ a.header-menu-btn{
     padding: 25px;
     margin-bottom: 40px;
 }
-.Astronomy-Communities-container{
+
+.Astronomy-Communities-container {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     justify-items: center;
@@ -471,36 +536,44 @@ a.header-menu-btn{
     margin-top: 25px;
     margin-bottom: 25px;
 }
-.ASI-1{
+
+.ASI-1 {
     margin-right: 100px;
 }
-.ASI-1 h1{
+
+.ASI-1 h1 {
     font-family: 'Poly';
     font-size: 45px;
     font-weight: 200;
     font-style: oblique;
 }
-.ASI-2 ,.ASI-3{
+
+.ASI-2,
+.ASI-3 {
     font-family: 'Poppins';
     display: grid;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
 }
-.ASI-H1{
+
+.ASI-H1 {
     font-size: 20px;
 }
-.ASI-p{
+
+.ASI-p {
     font-size: 35px;
     line-height: 0;
     font-weight: 600;
 }
-.ASI-3-content{
+
+.ASI-3-content {
     justify-items: center;
     text-align: center;
 }
-          /* ----- Missions page ----- */
 
-.banner{
+/* ----- Missions page ----- */
+
+.banner {
     background-image: url(images/starship_hero_d.jpg);
     background-size: cover;
     background-position: center;
@@ -511,18 +584,21 @@ a.header-menu-btn{
     align-content: center;
     text-align: center;
 }
-.banner-content{
+
+.banner-content {
     background-color: #6262626c;
     padding: 35px;
     border-radius: 25px;
 }
-.banner-content h1{
+
+.banner-content h1 {
     color: aliceblue;
     font-size: 50px;
     text-shadow: 2px 7px 5px black;
     text-align: center;
 }
-.banner-content p{
+
+.banner-content p {
     width: 800px;
     color: aliceblue;
     font-size: 30px;
@@ -537,42 +613,48 @@ a.header-menu-btn{
     align-items: center;
     justify-content: space-around;
     width: 80%;
-    
+
     /* --- CRITICAL ADDITION FOR THE BACKGROUND --- */
-    background-color: #0b0c1f; /* Deep dark blue/purple to match the inputs */
-    
+    background-color: #0b0c1f;
+    /* Deep dark blue/purple to match the inputs */
+
     /* Optional: Add a subtle border or box-shadow for depth */
-    border-bottom: 1px solid #1a1a2e; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
-    
+    border-bottom: 1px solid #1a1a2e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
     /* Optional: Ensure text color is light against the dark background */
-    color: #ffffff; 
-    
-    max-width: 1200px; 
-    margin: 20px auto; 
-    padding: 10px 20px; /* Added horizontal padding to give space around items */
-    border-radius: 8px; /* Add slight rounding */
+    color: #ffffff;
+
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    /* Added horizontal padding to give space around items */
+    border-radius: 8px;
+    /* Add slight rounding */
 }
+
 /* ... rest of your CSS ... */
 
-.Crud-Top-bar_title{
+.Crud-Top-bar_title {
     grid-area: title;
 }
-.add_mission{
+
+.add_mission {
     grid-area: add_mission;
 }
-.add_mission button{
+
+.add_mission button {
     align-items: center;
     appearance: none;
     background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
     border: 0;
     border-radius: 6px;
-    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
     display: inline-flex;
-    font-family: "JetBrains Mono",monospace;
+    font-family: "JetBrains Mono", monospace;
     height: 48px;
     justify-content: center;
     line-height: 1;
@@ -583,37 +665,41 @@ a.header-menu-btn{
     position: relative;
     text-align: left;
     text-decoration: none;
-    transition: box-shadow .15s,transform .15s;
+    transition: box-shadow .15s, transform .15s;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
     white-space: nowrap;
-    will-change: box-shadow,transform;
+    will-change: box-shadow, transform;
     font-size: 18px;
 }
+
 .add_mission button:focus {
-  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
 
 .add_mission button:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-  transform: translateY(-2px);
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
 }
 
 .add_mission button:active {
-  box-shadow: #3c4fe0 0 3px 7px inset;
-  transform: translateY(2px);
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
-.filter_agency{
+.filter_agency {
     grid-area: filter_agency;
 }
-.year_search_bar{
+
+.year_search_bar {
     grid-area: filter_year;
 }
-.search_bar{
+
+.search_bar {
     grid-area: search_bar;
 }
+
 /* Style for both filter containers */
 .filter_agency,
 .filter_year {
@@ -629,96 +715,113 @@ a.header-menu-btn{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    
+
     /* Box Model */
-    height: 40px; 
-    padding: 0 20px 0 10px; /* Adjust padding for text and icon */
+    height: 40px;
+    padding: 0 20px 0 10px;
+    /* Adjust padding for text and icon */
     border-radius: 6px;
-    
+
     /* Colors & Typography */
-    background-color: #1a1a2e; /* Dark background for a space theme */
+    background-color: #1a1a2e;
+    /* Dark background for a space theme */
     color: #ffffff;
-    border: 1px solid #5adaff; /* Light blue border */
+    border: 1px solid #5adaff;
+    /* Light blue border */
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
-    
+
     /* Icon (Dropdown Arrow) */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%235adaff" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.018 2.38 4 3.205 4h9.59c.825 0 1.32 1.018.753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 8px center; /* Position the custom arrow */
+    background-position: right 8px center;
+    /* Position the custom arrow */
     background-size: 16px;
-    
+
     /* Hover/Focus Effects */
     transition: all 0.2s ease;
 }
 
 .filter_agency select:hover,
 .filter_year select:hover {
-    background-color: #2b2b4e; /* Slightly lighter on hover */
+    background-color: #2b2b4e;
+    /* Slightly lighter on hover */
     box-shadow: 0 0 5px #5adaff;
 }
 
 .filter_agency select:focus,
 .filter_year select:focus {
     outline: none;
-    border-color: #5468ff; /* Brighter border on focus */
+    border-color: #5468ff;
+    /* Brighter border on focus */
     box-shadow: 0 0 8px #5468ff;
 }
 
-.search_bar ,.year_search_bar {
+.search_bar,
+.year_search_bar {
     /* Optional: Ensure consistent height/alignment with the button */
     height: 48px;
     display: flex;
     align-items: center;
 }
 
-.search_bar input[type="search"] ,.year_search_bar input[type="search"]{
+.search_bar input[type="search"],
+.year_search_bar input[type="search"] {
     /* Box Model */
-    height: 40px; 
-    padding: 0 15px; 
+    height: 40px;
+    padding: 0 15px;
     border-radius: 6px;
-    
+
     /* Colors & Typography */
-    background-color: #1a1a2e; /* Dark background */
+    background-color: #1a1a2e;
+    /* Dark background */
     color: #ffffff;
-    border: 1px solid #5adaff; /* Light blue border */
+    border: 1px solid #5adaff;
+    /* Light blue border */
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    
+
     /* Placeholder Text */
     &::placeholder {
-        color: #8a8a9e; /* Muted color for placeholder */
+        color: #8a8a9e;
+        /* Muted color for placeholder */
     }
-    
+
     /* Optional: Add search icon using background image if needed, or rely on HTML/JS */
-    
+
     /* Focus Effect */
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.search_bar input[type="search"]:focus ,.year_search_bar input[type="search"]:focus{
+.search_bar input[type="search"]:focus,
+.year_search_bar input[type="search"]:focus {
     outline: none;
     border-color: #5468ff;
     box-shadow: 0 0 8px #5468ff;
 }
 
-.Missions-card-status{
+.Missions-card-status {
     display: grid;
     grid-template-columns: 50% 50%;
     /* padding-right: 15px; */
-    
+
 }
-.Missions-card-status-left{
+
+.Missions-card-status-left {
     justify-self: end;
     padding-right: 10px;
 }
-.mission-hr{
+
+.mission-hr {
     border-color: rgba(0, 0, 0, 0.089);
 }
+
 /* Container for the buttons */
 .card-actions {
-    position: absolute; /* Allows positioning relative to the card */
+    position: absolute;
+    /* Allows positioning relative to the card */
     top: 10px;
     right: 10px;
 }
@@ -734,7 +837,8 @@ a.header-menu-btn{
     transition: opacity 0.2s;
     color: black;
 }
-.action_header-btn{
+
+.action_header-btn {
     background: none;
     border: none;
     cursor: pointer;
@@ -757,9 +861,12 @@ a.header-menu-btn{
 
 /* This class is ADDED by JavaScript when the user clicks the star */
 .is-favorited {
-    color: gold; /* Yellow star for favorited item */
+    color: gold;
+    /* Yellow star for favorited item */
 }
-.CRUD_Form ,.Side_bar_fav{
+
+.CRUD_Form,
+.Side_bar_fav {
     position: fixed;
     background-color: #36363679;
     height: 100%;
@@ -768,16 +875,19 @@ a.header-menu-btn{
     left: 0;
     z-index: 100;
     display: grid;
-    
+
 }
-.CRUD_Form{
+
+.CRUD_Form {
     justify-items: center;
     align-items: center;
 }
-.Side_bar_fav{
+
+.Side_bar_fav {
     justify-items: end;
 }
-.Form-container{
+
+.Form-container {
     background-color: white;
     width: 600px;
     padding: 25px;
@@ -785,32 +895,36 @@ a.header-menu-btn{
     box-shadow: 5px 5px 15px 5px #ffffff4d;
 }
 
-#add_mission_form{
+#add_mission_form {
     display: grid;
     grid-auto-flow: row;
 }
 
-#add_mission_form label{
+#add_mission_form label {
     padding-top: 10px;
     padding-bottom: 10px;
     font-family: 'Poppins';
     font-size: 25px;
-    
+
 }
-.form_input{
+
+.form_input {
     padding: 15px;
     border: none;
     border-bottom: 1px solid #000000;
     margin-bottom: 8px;
 }
-.form_btn{
+
+.form_btn {
     padding: 15px;
     margin-bottom: 10px;
 }
-.hidden{
+
+.hidden {
     display: none !important;
 }
-.Side_bar_container{
+
+.Side_bar_container {
     background-color: white;
     width: 600px;
     right: 0;
@@ -819,30 +933,36 @@ a.header-menu-btn{
 
     padding-bottom: 90px;
 }
+
 .Side_bar_container img {
     width: 350px;
     justify-self: center;
     display: grid;
     grid-auto-flow: row;
 }
-.Side_bar_container_top{
+
+.Side_bar_container_top {
     margin-bottom: 50px;
 }
-.Side_bar_container_bottom{
+
+.Side_bar_container_bottom {
     display: grid;
     grid-auto-flow: column;
     align-items: center;
     column-gap: 20px;
 }
-.Side_bar_container_bottom img{
+
+.Side_bar_container_bottom img {
     width: 250px;
     height: 180px;
     border-radius: 8px;
 }
-.Side_bar_container_bottom_content_title{
+
+.Side_bar_container_bottom_content_title {
     font-family: 'Orbitron';
 }
-.container_fav_mission_js{
+
+.container_fav_mission_js {
     /* display: grid;
     grid-auto-flow: row; */
     justify-items: start;
@@ -850,28 +970,31 @@ a.header-menu-btn{
     scroll-snap-type: none;
     scroll-behavior: smooth;
     max-height: 80vh;
-    
+
 }
 
 
 
-.Missions-title{
+.Missions-title {
     display: grid;
     grid-template-columns: max-content max-content;
     justify-items: center;
     column-gap: 10px;
     align-items: center;
 }
-.Missions-title-icon{
+
+.Missions-title-icon {
     justify-content: end;
 }
-.Missions-title-p{
+
+.Missions-title-p {
     justify-content: start;
     font-size: 2rem;
     font-family: 'Plus Jakarta Sans';
-    font-weight: 800; 
+    font-weight: 800;
 }
-.Missions-cards{
+
+.Missions-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(min-content, max-content);
@@ -881,7 +1004,8 @@ a.header-menu-btn{
     margin-right: 10%;
     margin-bottom: 150px;
 }
-.Missions-cards-iteam{
+
+.Missions-cards-iteam {
     display: grid;
     grid-template-columns: 470px;
     grid-template-rows: 1fr 1fr;
@@ -890,7 +1014,8 @@ a.header-menu-btn{
     box-shadow: 5px 5px 15px 5px #999999;
     border-radius: 10px;
 }
-.Missions-card-img img{
+
+.Missions-card-img img {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -899,30 +1024,36 @@ a.header-menu-btn{
     margin: 20px;
     border-radius: 27px;
 }
-.Missions-card-img{
+
+.Missions-card-img {
     margin-bottom: 0;
 }
-.Missions-card-content{
+
+.Missions-card-content {
     margin-left: 2%;
     margin-right: 2%;
 }
-.Missions-card-content hr{
+
+.Missions-card-content hr {
     margin-left: 4%;
     margin-right: 4%;
-    
+
 }
-.Missions-card-content p{
+
+.Missions-card-content p {
     padding: 20px;
     margin: 0;
 }
-.Missions-card-content-title{
+
+.Missions-card-content-title {
     font-family: 'Orbitron';
     font-size: 60px;
     font-weight: 500;
     text-align: center;
     line-height: 0.2;
 }
-.Missions-card-content-description{
+
+.Missions-card-content-description {
     font-family: 'Port Lligat Slab';
     font-size: 22px;
     font-weight: 200;
@@ -930,9 +1061,9 @@ a.header-menu-btn{
     word-wrap: break-word;
 }
 
-          /* ----- Planets page ----- */
+/* ----- Planets page ----- */
 
-.banner-2{
+.banner-2 {
     background-image: url(images/all-planetes.jpg);
     background-size: cover;
     background-position: center;
@@ -943,14 +1074,16 @@ a.header-menu-btn{
     align-content: center;
     text-align: center;
 }
-.Our-solar-system{
+
+.Our-solar-system {
     justify-items: center;
     display: grid;
-    grid-template-rows: repeat(2 ,1fr);
+    grid-template-rows: repeat(2, 1fr);
     row-gap: 40px;
     margin-bottom: 80px;
 }
-.Our-solar-system-card{
+
+.Our-solar-system-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 50px;
@@ -959,15 +1092,18 @@ a.header-menu-btn{
     border-radius: 25px;
     padding: 15px;
 }
-.Our-solar-system-card img{
+
+.Our-solar-system-card img {
     border-radius: 35px;
     height: 637px;
     width: 550px;
 }
-.Our-solar-system-card-content-parent{
+
+.Our-solar-system-card-content-parent {
     position: relative;
 }
-.Our-solar-system-card-content-child{
+
+.Our-solar-system-card-content-child {
     position: absolute;
     display: grid;
     grid-template-rows: auto auto 1fr;
@@ -975,40 +1111,45 @@ a.header-menu-btn{
     height: 100%;
     padding: 25px;
 }
-.content-child-title{
+
+.content-child-title {
     align-self: start;
     font-family: 'Orbitron';
     margin: 0;
     padding: 0;
     width: 100%;
 }
-.content-child-title p{
+
+.content-child-title p {
     margin: 0;
     padding: 10px;
     line-height: 1;
     font-size: 100px;
     font-weight: 600;
 }
-.content-child-title hr{
+
+.content-child-title hr {
     line-height: 0;
     margin: 0;
-    
+
 }
-img#bot-img{
+
+img#bot-img {
     width: 40px;
     height: 40px;
     border-radius: 0;
 }
-.content-child-desc{
+
+.content-child-desc {
     font-size: x-large;
     font-weight: 500;
     font-family: 'Port Lligat Slab';
 }
-          
-          /* ----- Contact Us page ----- */
+
+/* ----- Contact Us page ----- */
 
 
-.contact-description{
+.contact-description {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 40px;
@@ -1021,57 +1162,68 @@ img#bot-img{
     margin-left: 14%;
     margin-right: 14%;
 }
-.contact-description-img-parent{
+
+.contact-description-img-parent {
     position: relative;
 }
-.contact-description-img-child{
+
+.contact-description-img-child {
     position: absolute;
     top: 20px;
     left: 30px;
     color: #ffffff;
     display: grid;
-    grid-template-rows: auto 1fr  1fr;
+    grid-template-rows: auto 1fr 1fr;
     height: 95%;
 }
-.contact-description img{
+
+.contact-description img {
     background-position: center;
     background-size: cover;
     border-radius: 15px 15px 15px 15px;
     margin: 10px;
 }
-.contact-description-img p{
+
+.contact-description-img p {
     font-size: 18px;
 }
-#CDI-title-h1{
+
+#CDI-title-h1 {
     font-size: 36px;
     line-height: 0;
     font-family: 'Orbitron';
     font-weight: 600;
 }
-.CDI-middle{
+
+.CDI-middle {
     /* transform: translate(0%, 50%);  */
     color: rgb(255, 255, 255);
     align-content: end;
 }
-.CDI-middle-number ,.CDI-middle-email{
+
+.CDI-middle-number,
+.CDI-middle-email {
     display: grid;
     grid-template-columns: 50px 1fr;
     align-items: center;
     grid-auto-flow: column;
 }
-.CDI-social{
+
+.CDI-social {
     display: grid;
     grid-auto-flow: column;
     align-items: end;
     width: 50px;
 }
-.contact-description-content{
+
+.contact-description-content {
     background-color: #ffffff;
     width: 100%;
 
     margin: 50px;
 }
-.form-container{
+
+.form-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -1079,49 +1231,59 @@ img#bot-img{
     row-gap: 40px;
     padding-right: 50px;
 }
-.form-container-left ,.form-container-right{
+
+.form-container-left,
+.form-container-right {
     grid-area: span 1;
 }
-.form-container-bottom{
+
+.form-container-bottom {
     grid-column: span 2;
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
-.container-input{
+
+.container-input {
     display: grid;
     font-family: 'Poppins';
 }
-.container-input label{
+
+.container-input label {
     font-size: 25px;
     font-weight: 200;
 }
-.container-radio-title label{
+
+.container-radio-title label {
     font-size: 25px;
     font-weight: 200;
 }
-.container-input .input{
+
+.container-input .input {
     background-color: #99999900;
     padding: 15px;
     border: none;
-    border-bottom:1px solid #414141;
+    border-bottom: 1px solid #414141;
     font-size: larger;
     outline: none;
 }
-.radio-btn{
+
+.radio-btn {
     display: grid;
     grid-auto-flow: column;
     padding-bottom: 20px;
     padding-top: 15px;
 }
-.container-radio label{
+
+.container-radio label {
     padding-left: 10px;
     font-size: 16px;
     font-weight: 500;
 }
-.container-botton{
+
+.container-botton {
     justify-self: end;
     grid-column: span 2;
-    position: relative; 
+    position: relative;
     z-index: 10;
 }
 
@@ -1144,7 +1306,7 @@ img#bot-img{
     color: #000000;
 } */
 
-.contact_btn_submit{
+.contact_btn_submit {
     top: 60px;
     background-color: black;
     padding: 15px 20px 15px 20px;
@@ -1155,9 +1317,9 @@ img#bot-img{
     font-size: larger;
 }
 
-.contact-cards{
+.contact-cards {
     display: grid;
-    grid-template-columns: repeat(3 ,1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: center;
     gap: 55px;
@@ -1165,41 +1327,58 @@ img#bot-img{
     margin-right: 12%;
     margin-top: 100px;
 }
-.contact-cards-list{
+
+.contact-cards-list {
     display: grid;
     justify-items: start;
 }
-.contact-img{
+
+.contact-img {
     justify-content: flex-start;
     justify-self: start;
 }
-.contact-cards-list p{
+
+.contact-cards-list p {
     text-align: start;
     font-family: 'Port Lligat Slab';
 }
-.contact-des{
+
+.contact-des {
     width: 65%;
 }
-.contact-des p{
+
+.contact-des p {
     font-family: 'Port Lligat Slab';
     font-size: 16px;
 }
-.contact-cards{
+
+.contact-cards {
     margin-bottom: 80px;
 }
-.contact-text{
+
+.contact-text {
     font-family: 'Port Lligat Slab';
     font-size: 32px;
     font-weight: 600;
 }
-.contact-des a{
+
+.contact-des a {
 
     color: #0f0f0f;
 }
 
+.error {
+    color: red;
+    text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.274);
+}
+
+
+
+
+
 /* the last part is the footer  */
 
-.footer{
+.footer {
     grid-area: footer;
     background-image: url(images/dark-sky-header-top.jpg);
     background-size: cover;
@@ -1207,10 +1386,12 @@ img#bot-img{
     background-repeat: no-repeat;
     height: 482px;
 }
-.footer hr{
+
+.footer hr {
     width: 90%;
 }
-.footer-container{
+
+.footer-container {
     background-color: #030303;
     color: #ffffff;
     height: 400px;
@@ -1219,61 +1400,71 @@ img#bot-img{
     grid-template-rows: 1fr 1fr;
     justify-items: center;
 }
-.footer-top{
+
+.footer-top {
     display: grid;
-    grid-template-columns: repeat(4 , 1fr);
+    grid-template-columns: repeat(4, 1fr);
     justify-content: space-around;
     justify-items: center;
     width: 100%;
     margin: 40px 55px 40px 55px;
 }
-.footer-top li{
+
+.footer-top li {
     list-style: none;
 }
-.footer-top a{
+
+.footer-top a {
     text-decoration: none;
     font-size: larger;
     color: #ffffff;
     font-family: 'Abhaya Libre SemiBold';
     line-height: 1.9rem;
 }
-.footer-cards h3{
+
+.footer-cards h3 {
     font-size: x-large;
 }
-.footer-cards-input{
+
+.footer-cards-input {
     width: 300px;
     height: 50px;
     border-radius: 7px;
     padding: 10px 0px 10px 10px;
 }
-.footer-bottom{
+
+.footer-bottom {
     margin-bottom: 50px;
     display: grid;
-    grid-template-columns: repeat(3 , 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-around;
     justify-items: center;
     width: 100%;
     margin: 40px 55px 40px 55px;
 }
-.footer-copyrigthing{
+
+.footer-copyrigthing {
     list-style: none;
     display: grid;
-    grid-template-columns: auto  auto auto;
+    grid-template-columns: auto auto auto;
     gap: 25px;
     color: #ffffff;
     align-items: center;
 }
-.footer-copyrigthing a{
+
+.footer-copyrigthing a {
     text-decoration: none;
     font-size: larger;
     color: #ffffff;
 }
-.footer-social{
+
+.footer-social {
     display: grid;
     grid-template-columns: auto auto auto;
     align-items: center;
 }
-.footer-social img{
+
+.footer-social img {
     background-color: #535353;
     border-radius: 100%;
     margin: 5px;
@@ -1364,7 +1555,7 @@ img#bot-img{
         gap: 20px;
     }
 
-    
+
     .Astronomy {
         grid-template-columns: 1fr;
         margin: 20px;
@@ -1376,7 +1567,7 @@ img#bot-img{
         border-radius: 15px 15px 0 0;
     }
 
-    
+
     .journale {
         grid-template-columns: 1fr;
         margin: 20px;

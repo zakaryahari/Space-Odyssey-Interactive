@@ -2,15 +2,15 @@
 
 let missionData = [];
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-path =  "../js/missions.json"
+path = "../js/missions.json"
 
 
 
-async function getData(path){
+async function getData(path) {
     let result = await fetch(path);
-    
+
     return await result.json();
-}   
+}
 getData(path).then(data => { missionData = data; renderProjects(missionData); });
 
 console.log(getData(path));
@@ -21,13 +21,13 @@ function renderProjects(array) {
 
 
     const container = document.getElementsByClassName('Missions-cards')[0];
-    
-    container.innerHTML = ''; 
+
+    container.innerHTML = '';
 
     const cardsHTML = array.map(mission => {
-            const isFavorited = favorites.some(favId => favId === mission.id);
-            const favoriteIcon = isFavorited ? '★' : '☆';
-            const favoriteClass = isFavorited ? 'is-favorited' : '';
+        const isFavorited = favorites.some(favId => favId === mission.id);
+        const favoriteIcon = isFavorited ? '★' : '☆';
+        const favoriteClass = isFavorited ? 'is-favorited' : '';
         return `
             <div class="Missions-cards-iteam Missions-${mission.id}">
                 <div class="Missions-card-img">
@@ -59,7 +59,7 @@ function renderProjects(array) {
                 </div>
             </div>
         `;
-    }).join(''); 
+    }).join('');
 
     container.innerHTML = cardsHTML;
     filling_filter_year_input();
@@ -68,38 +68,38 @@ function renderProjects(array) {
 
 // Filtering Missions by Year
 
-function Filter_fun(){
+function Filter_fun() {
     const filter_input = document.getElementById('year_search_bar_input').value;
-    
+
     console.log(filter_input);
 }
 
 const year_search_bar = document.getElementById('year_search_bar_input');
 
-year_search_bar.addEventListener('change',Filter_fun);
+year_search_bar.addEventListener('change', Filter_fun);
 
 
 function favorite_toggle_fun(clickedButton) {
     const missionId = parseInt(clickedButton.getAttribute('data-mission-id'));
-    
+
 
     if (clickedButton.classList.contains('is-favorited')) {
-        
+
         const index = favorites.findIndex(id => id === missionId);
         if (index !== -1) {
             favorites.splice(index, 1);
         }
-        
+
         clickedButton.textContent = '☆';
         clickedButton.classList.remove('is-favorited');
     } else {
-        
+
         favorites.push(missionId);
-        
+
         clickedButton.textContent = '★';
         clickedButton.classList.add('is-favorited');
     }
-    
+
     localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
@@ -107,13 +107,13 @@ function favorite_toggle_fun(clickedButton) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const missionsContainer = document.querySelector('.Missions-cards'); 
+    const missionsContainer = document.querySelector('.Missions-cards');
 
     if (missionsContainer) {
 
         missionsContainer.addEventListener('click', (e) => {
 
-            const favoriteButton = e.target.closest('.favorite-toggle'); 
+            const favoriteButton = e.target.closest('.favorite-toggle');
 
             if (favoriteButton) {
                 favorite_toggle_fun(favoriteButton);
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-        
+
     console.log(favorites);
 });
 
@@ -141,9 +141,9 @@ function applyFiltersAndSearch() {
     const yearSearch = document.getElementById('year_search_bar_input').value.trim();
     const missionSearch = document.getElementById('search_bar_input').value.trim().toLowerCase();
 
-    let filteredMissions = missionData; 
+    let filteredMissions = missionData;
 
-    if (agencyFilter) { 
+    if (agencyFilter) {
         filteredMissions = filteredMissions.filter(mission => mission.agency.includes(agencyFilter));
     }
 
@@ -155,8 +155,8 @@ function applyFiltersAndSearch() {
     }
 
     if (missionSearch) {
-        filteredMissions = filteredMissions.filter(mission => 
-            mission.name.toLowerCase().includes(missionSearch) || 
+        filteredMissions = filteredMissions.filter(mission =>
+            mission.name.toLowerCase().includes(missionSearch) ||
             mission.objective.toLowerCase().includes(missionSearch)
         );
     }
@@ -166,13 +166,13 @@ function applyFiltersAndSearch() {
 
 
 const agencyFilter = document.getElementById('filter_agency_select');
-agencyFilter.addEventListener('change',applyFiltersAndSearch);
+agencyFilter.addEventListener('change', applyFiltersAndSearch);
 
 const yearSearch = document.getElementById('year_search_bar_input');
-yearSearch.addEventListener('input',applyFiltersAndSearch);
+yearSearch.addEventListener('input', applyFiltersAndSearch);
 
 const missionSearch = document.getElementById('search_bar_input');
-missionSearch.addEventListener('input',applyFiltersAndSearch);
+missionSearch.addEventListener('input', applyFiltersAndSearch);
 
 
 // CRUD_Form
@@ -185,7 +185,7 @@ const mission_save_input = document.querySelector('.mission_save_input');
 
 function NextID(missions) {
     if (missions.length === 0) {
-        return 1; 
+        return 1;
     }
     const maxId = Math.max(...missions.map(mission => mission.id));
     return maxId + 1;
@@ -199,7 +199,7 @@ function add_new_mission_card() {
     const mission_imgae_input = document.getElementById('mission_image_input').value;
 
     const edit_id_hidden = parseInt(document.getElementById('edit-id_hidden').value);
-    
+
     if (!mission_name_input || !mission_agency_input || !mission_objective_input || !mission_launchDate_input) {
         alert("Please fill in the Name, Agency, and Objective fields.");
         return;
@@ -208,17 +208,17 @@ function add_new_mission_card() {
 
         console.log(NextID(missionData));
         const Mission_newcard = {
-            id :  NextID(missionData),
-            name : mission_name_input,
-            agency : mission_agency_input,
-            objective : mission_objective_input,
-            launchDate : mission_launchDate_input,
-            image : '../images/default.png'
+            id: NextID(missionData),
+            name: mission_name_input,
+            agency: mission_agency_input,
+            objective: mission_objective_input,
+            launchDate: mission_launchDate_input,
+            image: '../images/default.png'
         };
         missionData.push(Mission_newcard);
 
     }
-    else{
+    else {
         const findId = missionData.findIndex(mission => mission.id === edit_id_hidden);
 
         missionData[findId].name = mission_name_input;
@@ -234,7 +234,7 @@ function add_new_mission_card() {
 if (crud_form) {
 
     crud_form.addEventListener('click', (e) => {
-        
+
         if (e.target === crud_form) {
             crud_form.classList.add('hidden');
             console.log("Form closed by backdrop click.");
@@ -244,37 +244,37 @@ if (crud_form) {
 if (add_mission_btn) {
     add_mission_btn.addEventListener('click', () => {
         if (crud_form) {
-            crud_form.classList.remove('hidden'); 
+            crud_form.classList.remove('hidden');
         }
     });
 }
 if (mission_close_input) {
     mission_close_input.addEventListener('click', () => {
-        crud_form.classList.add('hidden'); 
+        crud_form.classList.add('hidden');
         renderProjects(missionData);
     });
 }
 if (mission_save_input) {
     mission_save_input.addEventListener('click', () => {
         add_new_mission_card();
-        crud_form.classList.add('hidden'); 
+        crud_form.classList.add('hidden');
         renderProjects(missionData);
-    });    
+    });
 }
 
 const edit_mission_btn = document.querySelector('.edit-mission-btn');
 
 function edit_mission_fun(id) {
     const selected_mission = missionData.find(mission => mission.id === id);
-    if (!selected_mission){
+    if (!selected_mission) {
         alert('there is error 404 this mission is not in the data');
         return;
     }
     if (crud_form) {
-        crud_form.classList.remove('hidden'); 
+        crud_form.classList.remove('hidden');
     }
     const edit_id_hidden = document.getElementById('edit-id_hidden');
-    edit_id_hidden.value = selected_mission.id ;
+    edit_id_hidden.value = selected_mission.id;
 
     document.getElementById('mission_name_input').value = selected_mission.name;
     document.getElementById('mission_agency_input').value = selected_mission.agency;
@@ -308,13 +308,13 @@ function renderFavorite(array) {
 
     if (!Side_bar_container_bottom) return;
 
-    Side_bar_container_bottom.innerHTML = ''; 
+    Side_bar_container_bottom.innerHTML = '';
 
 
     const Fav_cards = array.map(fav => {
         const missionId = missionData.find(mission => mission.id === fav);
         if (!missionId) {
-            return ''; 
+            return '';
         }
         return `
                     <hr class="mission-hr">
@@ -338,7 +338,7 @@ function renderFavorite(array) {
 
 const favorite_header_toggle = document.querySelector('.favorite_header-toggle');
 
-favorite_header_toggle.addEventListener('click' , () => renderFavorite(favorites));
+favorite_header_toggle.addEventListener('click', () => renderFavorite(favorites));
 
 const Side_bar_fav = document.querySelector('.Side_bar_fav');
 
@@ -347,7 +347,7 @@ console.log(Side_bar_fav);
 if (Side_bar_fav) {
 
     Side_bar_fav.addEventListener('click', (e) => {
-        
+
         if (e.target === Side_bar_fav) {
             Side_bar_fav.classList.add('hidden');
             console.log("Form closed by backdrop click.");
@@ -355,3 +355,6 @@ if (Side_bar_fav) {
     });
 
 }
+
+
+
