@@ -355,7 +355,3 @@ if (Side_bar_fav) {
     });
 
 }
-
-// Contact.html
-
-

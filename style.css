@@ -1121,8 +1121,11 @@ img#bot-img{
 .container-botton{
     justify-self: end;
     grid-column: span 2;
+    position: relative; 
+    z-index: 10;
 }
-.container-botton input{
+
+/* .container-botton {
     top: 60px;
     background-color: black;
     padding: 15px 20px 15px 20px;
@@ -1131,11 +1134,25 @@ img#bot-img{
     border-radius: 5px;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-size: larger;
-}
-.container-botton input:hover{
+    position: relative; 
+    z-index: 10;
+} */
+
+/* .container-botton button:hover{
     background-color: rgb(255, 255, 255);
     border:1px solid #000000;
     color: #000000;
+} */
+
+.contact_btn_submit{
+    top: 60px;
+    background-color: black;
+    padding: 15px 20px 15px 20px;
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: larger;
 }
 
 .contact-cards{
