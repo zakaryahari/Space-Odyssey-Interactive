@@ -86,8 +86,8 @@
                                 <div class="form-container">
                                     <div class="form-container-left">
                                         <div class="container-input">
-                                            <label for="first-name-input">First Name :</label>
-                                            <input type="text" id="first-name-input" class="input" >
+                                            <label for="first-name">First Name :</label>
+                                            <input type="text" id="first-name" class="input" >
                                         </div>
                                         <br><br>
                                         <div class="container-input">
@@ -134,7 +134,7 @@
                                         </div>
                                     </div>
                                     <div class="container-botton">
-                                        <input type="submit" value="Send Message">
+                                        <input type="button" class="contact_btn_submit" value="send a message">
                                     </div>
                                 </div>
                             </form>
@@ -175,6 +175,8 @@
                         <a href="#">+94112224556</a>                    
                     </div>
                 </div>
+                <!-- <input type="button" class="contact_btn_test" value="tesssssssssssst"> -->
+
             </div>
         </section>
     
@@ -224,6 +226,55 @@
         </footer>
 
     </div>
-    <script src="../js/script.js"></script>
+    <script >
+        
+        // Contact.html
+
+
+        // const contact_btn_submit = document.querySelector('.contact_btn_submit');
+
+
+        function Contact_check_fun() {
+            const first_name = document.getElementById('first-name').value;
+            const email_input = document.getElementById('email-input').value;
+            const last_name = document.getElementById('last-name').value;
+            const phone_input = document.getElementById('phone-input').value;
+            const radio_btn = document.getElementsByName('Select-Subject');
+
+            const boolradio = Array.from(radio_btn).some(condition => condition.checked);
+            if (!boolradio) {
+                alert('Please select an option .');
+                return;
+            }
+            
+            let namePattern = /^[A-Za-z\s]{2,}$/;
+            let emailPattern = /^[\w.-]+@[\w.-]+\.\w{2,}$/;
+            let phonePattern = /^\d{9,10}$/;
+            
+            if (!namePattern.test(first_name)) {
+                alert('Please enter a valid first-name.');
+                return;
+            }
+            if (!namePattern.test(last_name)) {
+                alert('Please enter a valid last-name.');
+                return;
+            }
+            if (!emailPattern.test(email_input)) {
+                alert('Please enter a valid Email.');
+                return;
+            }
+            if (!phonePattern.test(phone_input)) {
+                alert('Please enter a valid phone number 10 digits .');
+                return;
+            }
+
+            alert('your form submited.');
+            document.querySelector('.content-form form').reset();
+        }
+        const contact_btn_submit = document.querySelector('.contact_btn_submit');
+
+        contact_btn_submit.addEventListener('click',Contact_check_fun);
+    </script>
 </body>
 </html>
+
