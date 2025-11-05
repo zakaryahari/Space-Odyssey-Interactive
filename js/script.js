@@ -197,6 +197,9 @@ function add_new_mission_card() {
     const mission_objective_input = document.getElementById('mission_objective_input').value;
     const mission_launchDate_input = document.getElementById('mission_launchDate_input').value;
     const mission_imgae_input = document.getElementById('mission_image_input').value;
+    const pathParts = mission_imgae_input.split(/[\/\\]/);
+    const filename = pathParts[pathParts.length - 1];
+    console.log(mission_imgae_input);
 
     const edit_id_hidden = parseInt(document.getElementById('edit-id_hidden').value);
 
@@ -213,7 +216,7 @@ function add_new_mission_card() {
             agency: mission_agency_input,
             objective: mission_objective_input,
             launchDate: mission_launchDate_input,
-            image: '../images/default.png'
+            image: '../images/' + filename
         };
         missionData.push(Mission_newcard);
 
