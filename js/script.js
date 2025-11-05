@@ -216,7 +216,7 @@ function add_new_mission_card() {
             agency: mission_agency_input,
             objective: mission_objective_input,
             launchDate: mission_launchDate_input,
-            image: '../images/' + filename
+            image: 'images/' + filename
         };
         missionData.push(Mission_newcard);
 
