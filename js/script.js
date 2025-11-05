@@ -232,6 +232,11 @@ function add_new_mission_card() {
 
     }
 
+    document.getElementById('mission_name_input').value = '';
+    document.getElementById('mission_agency_input').value = '';
+    document.getElementById('mission_objective_input').value = '';
+    document.getElementById('mission_launchDate_input').value = '';
+    document.getElementById('mission_image_input').value = '';
 }
 
 if (crud_form) {
