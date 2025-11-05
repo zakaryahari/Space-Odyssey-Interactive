@@ -5,7 +5,7 @@
     "agency": "NASA",
     "objective": "Réaliser le premier alunissage humain habité et garantir le retour en toute sécurité de l'équipage sur Terre.\nCollecter des échantillons de roches et de sol lunaires.\nDémontrer la capacité des États-Unis à atteindre un objectif national.",
     "launchDate": "1969-07-16",
-    "image": "images/apollo11.jpg"
+    "image": "images/Apollo11.jpg"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "agency": "ESA",
     "objective": "Réaliser la première mission à se placer en orbite autour d'une comète (67P).\nÉtudier l'origine du système solaire à travers la composition de la comète.\nDéployer l'atterrisseur Philae pour analyser la surface *in situ*.",
     "launchDate": "2004-03-02",
-    "image": "images/rosetta.jpg"
+    "image": "images/Rosetta.jpg"
   },
   {
     "id": 4,
@@ -53,6 +53,6 @@
     "agency": "ESA/JAXA",
     "objective": "Étudier la composition, la géophysique, et l'atmosphère de la planète Mercure.\nComprendre l'origine et l'évolution de Mercure par sa proximité avec le Soleil.\nMesurer le champ magnétique et l'environnement plasma de la planète.",
     "launchDate": "2018-10-20",
-    "image": "images/bepicolombo.jpg"
+    "image": "images/Bepicolombo.jpg"
   }
 ]
